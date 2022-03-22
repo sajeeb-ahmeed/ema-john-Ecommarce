@@ -11,12 +11,17 @@ const Shop = () => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, []);
+
+    //EVENT HANDDLEER
+    const handdleAddRoCart = (product) => {
+        console.log('clicked', product);
+    }
     return (
         <div className='shop container mt-5'>
             <div className="shop-products">
                 {
-                    products.map(product => <Product key={product.id} product={product}></Product>)
+                    products.map(product => <Product key={product.id} product={product} handdleAddRoCart={handdleAddRoCart}></Product>)
                 }
             </div>
             <div className="order-details">

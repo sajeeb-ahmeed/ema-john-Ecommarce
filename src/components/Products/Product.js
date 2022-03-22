@@ -3,8 +3,8 @@ import { Card } from 'react-bootstrap';
 import './Product.css'
 
 const Product = (props) => {
-    console.log(props.product);
-    const { name, img, price, ratings, seller } = props.product
+    // console.log(props.product);
+    const { name, img, price, ratings, seller, id } = props.product
     return (
         <div>
 
@@ -15,7 +15,7 @@ const Product = (props) => {
                     <p className='pb-3'> Price: {price}</p>
                     <p> Manufacturer: {seller}</p>
                     <p> Ratings: {ratings}</p>
-                    <Card.Footer className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
+                    <Card.Footer onClick={() => props.handdleAddRoCart(id)} className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
                         <small className="text-muted fw-bold ">Add to Cart</small>
                     </Card.Footer>
                 </Card.Body>
