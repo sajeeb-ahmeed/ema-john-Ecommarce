@@ -8,15 +8,15 @@ const Product = (props) => {
     return (
         <div>
 
-            <Card style={{ width: '21rem', height: '34rem', marginBottom: '20px', marginRight: '45px' }}>
+            <Card style={{ width: '21rem', height: '35rem', marginBottom: '20px', marginRight: '45px' }}>
                 <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>{name.slice(0, 17)}</Card.Title>
-                    <p> Price: {price}</p>
-                    <p> seller: {seller}</p>
-                    <p> ratings: {ratings}</p>
-                    <Card.Footer className='bg-info text-center'>
-                        <small className="text-muted ">Add to Cart</small>
+                <Card.Body style={{ textAlign: 'start' }}>
+                    <Card.Title>{name.slice(0, 20)}</Card.Title>
+                    <p className='pb-3'> Price: {price}</p>
+                    <p> Manufacturer: {seller}</p>
+                    <p> Ratings: {ratings}</p>
+                    <Card.Footer className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
+                        <small className="text-muted fw-bold ">Add to Cart</small>
                     </Card.Footer>
                 </Card.Body>
             </Card>
