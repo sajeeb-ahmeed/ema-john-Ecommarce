@@ -1,4 +1,4 @@
-.header{
+.headers{
     background-color: #1C2B35;
     height: 80px;
     display: flex;
@@ -6,16 +6,16 @@
     text-align: center;
     align-items: center;
 }
-.nav-link{
+.nav-links{
     display: flex;
     text-align: center;
     align-items: center;
 }
-.nav-link li{
+.nav-links li{
     list-style: none;
     
 }
-.nav-link li a{
+.nav-links li a{
    text-decoration: none;
    font-weight: 600;
    color: rgb(228, 228, 228);
@@ -23,7 +23,7 @@
    padding-right: 15px;
    font-size: 17px;
 }
-.nav-link li a:hover{
+.nav-links li a:hover{
    text-decoration: none;
    font-weight: 600;
    color: rgb(247, 125, 77);

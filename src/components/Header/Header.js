@@ -3,12 +3,12 @@ import logo from '../../images/Logo.svg';
 import './Header.css'
 const Header = () => {
     return (
-        <nav className='header '>
+        <nav className='headers '>
             <div>
                 <img src={logo} alt="" />
 
             </div>
-            <div className='nav-link'>
+            <div className='nav-links'>
                 <li><a href="/Shop">Shop</a></li>
                 <li><a href="/Order">Order </a></li>
                 <li><a href="/Inventory"> Inventory</a></li>
