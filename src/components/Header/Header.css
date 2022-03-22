@@ -1,0 +1,33 @@
+.header{
+    background-color: #1C2B35;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+.nav-link{
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.nav-link li{
+    list-style: none;
+    
+}
+.nav-link li a{
+   text-decoration: none;
+   font-weight: 600;
+   color: rgb(228, 228, 228);
+   padding: 15px;
+   padding-right: 15px;
+   font-size: 17px;
+}
+.nav-link li a:hover{
+   text-decoration: none;
+   font-weight: 600;
+   color: rgb(247, 125, 77);
+   padding: 15px;
+   padding-right: 15px;
+   font-size: 17px;
+}
