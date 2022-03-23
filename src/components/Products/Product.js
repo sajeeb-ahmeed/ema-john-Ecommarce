@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import './Product.css'
@@ -15,8 +17,9 @@ const Product = (props) => {
                     <p className='pb-3'> Price: {price}</p>
                     <p> Manufacturer: {seller}</p>
                     <p> Ratings: {ratings}</p>
-                    <Card.Footer onClick={() => props.handdleAddRoCart(id)} className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
-                        <small className="text-muted fw-bold ">Add to Cart</small>
+                    <Card.Footer onClick={() => props.handdleAddRoCart(props.product)} className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
+                        <small className="text-muted fw-bold pe-2">Add to Cart</small>
+                        <FontAwesomeIcon icon={faShoppingCart} />
                     </Card.Footer>
                 </Card.Body>
             </Card>

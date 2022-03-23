@@ -1,8 +1,12 @@
 .shop{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    padding: 20px;
 }
 .shop-products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+.order-details{
+    text-align: start;
 }
