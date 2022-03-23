@@ -1,6 +1,6 @@
 .shop{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 4fr 3fr;
     padding: 20px;
 }
 .shop-products{
@@ -9,4 +9,7 @@
 }
 .order-details{
     text-align: start;
+    background-color: rgba(255, 191, 71, 0.514);
+    width: 320px;
+    padding: 20px;
 }

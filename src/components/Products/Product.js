@@ -17,8 +17,8 @@ const Product = (props) => {
                     <p className='pb-3'> Price: {price}</p>
                     <p> Manufacturer: {seller}</p>
                     <p> Ratings: {ratings}</p>
-                    <Card.Footer onClick={() => props.handdleAddRoCart(props.product)} className='bg-info text-center btn-fotter' style={{ width: '100%' }}>
-                        <small className="text-muted fw-bold pe-2">Add to Cart</small>
+                    <Card.Footer onClick={() => props.handdleAddRoCart(props.product)} className='bg-info text-center btn-fotter btn-outline-dark' style={{ width: '100%' }}>
+                        <small className="text-muted fw-bold pe-2 ">Add to Cart</small>
                         <FontAwesomeIcon icon={faShoppingCart} />
                     </Card.Footer>
                 </Card.Body>
