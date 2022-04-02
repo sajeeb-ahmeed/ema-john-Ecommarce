@@ -16,7 +16,7 @@
 
 .cursor-pointer {
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width:1100px) {

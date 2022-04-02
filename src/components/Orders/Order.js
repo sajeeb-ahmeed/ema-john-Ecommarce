@@ -1,13 +1,19 @@
 import React from 'react';
 import useCart from '../../Hooks/useProducts/useCart';
 import useProducts from '../../Hooks/useProducts/useProducts';
+import { removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import '../Cart/Cart.css'
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Order = () => {
     const [products, setProducts] = useProducts();
-    const [cart, setCart] = useCart(products)
+    const [cart, setCart] = useCart(products);
+    const handleRemoveProduct = product => {
+        const rest = cart.filter(pd => pd.id !== product.id);
+        setCart(rest);
+        removeFromDb(product.id);
+    }
     return (
         <div>
             <div className="container-fluid">
@@ -16,7 +22,7 @@ const Order = () => {
                         <div className="col-md-7">
 
                             {
-                                cart.map(product => <ReviewItem key={product.id} product={product}></ReviewItem>)
+                                cart.map(product => <ReviewItem key={product.id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItem>)
                             }
                         </div>
                         <div className="col-md-4   bg-info">

@@ -3,6 +3,7 @@ import { faDeleteLeft, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 const ReviewItem = (props) => {
+    const { product, handleRemoveProduct } = props;
     const { name, img, price, shipping, quantity } = props.product
     return (
         <div>
@@ -22,7 +23,10 @@ const ReviewItem = (props) => {
 
                         </div>
                         <div>
-                            <FontAwesomeIcon className='p-3 cursor-pointer btn-outline-danger' icon={faTrashAlt} />
+                            <span onClick={() => handleRemoveProduct(product)}>
+
+                                <FontAwesomeIcon className='p-3 cursor-pointer btn-outline-danger' icon={faTrashAlt} />
+                            </span>
                         </div>
                     </div>
                 </div>
