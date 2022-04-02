@@ -19,6 +19,7 @@ const ReviewItem = (props) => {
                                 <p>Price : ${price}</p>
                                 <p>Shipping:{shipping}</p>
                                 <p> Quantity: {quantity}</p>
+                                <>{props.chi}</>
                             </div>
 
                         </div>

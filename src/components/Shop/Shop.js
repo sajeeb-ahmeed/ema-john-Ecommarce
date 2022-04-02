@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+
+import { Link } from 'react-router-dom';
 import useProducts from '../../Hooks/useProducts/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
@@ -26,7 +28,7 @@ const Shop = () => {
     }, [products])
 
     const handleAddToCart = (selectedProduct) => {
-        console.log(selectedProduct);
+        // console.log(selectedProduct);
         let newCart = [];
         const exists = cart.find(product => product.id === selectedProduct.id);
         if (!exists) {
@@ -44,8 +46,15 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container'>
-            <div className="products-container">
+        <div className=' container-fluid mx-auto row mt-5'>
+            <div className="col-md-3 text-center col-12 bg-info ms-lg-5 ">
+                <Cart cart={cart}>
+                    <Link to='/orders'>
+                        <p className='btn btn-outline-dark'> Order Review</p>
+                    </Link>
+                </Cart>
+            </div>
+            <div className="d-flex flex-wrap gap-5 ms-lg-3 text-center col-md-7 col-12">
                 {
                     products.map(product => <Product
                         key={product.id}
@@ -54,9 +63,7 @@ const Shop = () => {
                     ></Product>)
                 }
             </div>
-            <div className="cart-container">
-                <Cart cart={cart}></Cart>
-            </div>
+
         </div>
     );
 };
