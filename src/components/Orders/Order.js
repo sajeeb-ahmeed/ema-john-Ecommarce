@@ -29,7 +29,7 @@ const Order = () => {
                         <div className="col-md-4   bg-info">
                             <Cart key={cart.id} cart={cart}>
                                 <Link to='/shop'>
-                                    <p className='btn btn-outline-dark'>Cart Review</p>
+                                    <p className='btn btn-outline-dark'>Proceed Review</p>
                                 </Link>
                             </Cart>
 
