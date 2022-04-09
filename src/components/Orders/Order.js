@@ -26,7 +26,7 @@ const Order = () => {
                                 cart.map(product => <ReviewItem key={product.id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItem>)
                             }
                         </div>
-                        <div className="col-md-4   bg-info">
+                        <div className="col-md-4 ">
                             <Cart key={cart.id} cart={cart}>
                                 <Link to='/shop'>
                                     <p className='btn btn-outline-dark'>Proceed Review</p>

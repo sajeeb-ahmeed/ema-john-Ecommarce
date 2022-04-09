@@ -47,7 +47,7 @@ const Shop = () => {
 
     return (
         <div className=' container-fluid mx-auto row mt-5'>
-            <div className="col-md-3 text-center col-12 bg-info ms-lg-5 ">
+            <div className="col-md-3 text-center col-12  ms-lg-5 ">
                 <Cart cart={cart}>
                     <Link to='/orders'>
                         <p className='btn btn-outline-dark'> Order Review</p>

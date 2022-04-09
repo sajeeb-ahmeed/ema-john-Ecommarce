@@ -23,6 +23,8 @@ const Header = () => {
                         <Link className='link' to="/orders">Orders</Link>
                         <Link className='link' to="/inventory">Inventory</Link>
                         <Link className='link' to="/about">About</Link>
+                        <Link className='link' to="/login">Login</Link>
+                        <Link className='link' to="/signin">Sign In</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

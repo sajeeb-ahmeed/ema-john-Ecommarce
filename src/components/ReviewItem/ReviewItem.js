@@ -9,7 +9,7 @@ const ReviewItem = (props) => {
         <div>
             <div className='container '>
                 <div className="row">
-                    <div className="col-12 d-flex justify-content-between py-2 mb-3 bg-info">
+                    <div className="col-12 d-flex justify-content-between py-2 mb-3 ">
                         <div className='d-flex mr-1 justify-content-center align-items-center'>
                             <div className=''>
                                 <img className='me-4 rounded ' src={img} style={{ width: '80px', height: '80px' }} alt="" />
