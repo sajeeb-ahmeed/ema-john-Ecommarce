@@ -20,7 +20,7 @@ const Order = () => {
             <div className="container-fluid">
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-md-7">
+                        <div className="col-md-7 mt-5">
 
                             {
                                 cart.map(product => <ReviewItem key={product.id} product={product} handleRemoveProduct={handleRemoveProduct}></ReviewItem>)
