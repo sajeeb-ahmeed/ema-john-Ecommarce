@@ -1,15 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
+
+
+
+
+
 const SignUp = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate()
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+    }
+    const handlePassword = (event) => {
+        setPassword(event.target.value);
+    }
+    const handleConfirmPassword = (event) => {
+        setConfirmPassword(event.target.value);
+    }
+
+    //handle from submit 
+    const handleCreateUser = event => {
+        event.preventDefault();
+        if (password !== confirmPassword) {
+            setError(toast.error('Password MisMatched', { id: "error" }));
+            // console.log(error);
+            return;
+            //  alert(error ? error : 'MisMatched Password')
+        }
+        if (password.length < 6) {
+            // setError(toast.error('Password is too short', { id: "error" }));
+            toast.error('Password is too short', { id: "error" })
+
+            return;
+        }
+        createUserWithEmailAndPassword(email, password);
+        toast.success(' Account Create Successfully !', { id: "success" })
+    }
+
+
+    // use react-firebase-hooks -to create user with email and passowrd 
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth)
+
+    // navigate user 
+    if (user) {
+        navigate("/shop")
+    }
     return (
         <div className='py-4'>
             <h2 className='text-light text-center my-5'>Please Register Now </h2>
-            <Form className='col-md-3 mx-auto'>
+            <Form onSubmit={handleCreateUser} className='col-md-3 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleEmail} name='email' type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -17,11 +68,12 @@ const SignUp = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control onBlur={handlePassword} name='password' type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formConfirmPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control onBlur={handleConfirmPassword} name='confirmPassword' type="password" placeholder="Password" required />
+
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree with Trems & Condition " />
