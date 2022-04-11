@@ -50,7 +50,7 @@ const Shop = () => {
             <div className="col-md-3 text-center col-12  ms-lg-5 ">
                 <Cart cart={cart}>
                     <Link to='/orders'>
-                        <p className='btn btn-outline-dark'> Order Review</p>
+                        <p className='btn btn-outline-light'> Order Review</p>
                     </Link>
                 </Cart>
             </div>
