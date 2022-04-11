@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -17,6 +17,9 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const handleEmail = (event) => {
         setEmail(event.target.value);
     }
@@ -29,7 +32,7 @@ const Login = () => {
 
         if (user) {
             toast.success('successfully login');
-            navigate("/shop")
+            navigate(from, { replace: true })
         }
         if (!user) {
             toast.error('Make confrm you identity', { id: "error" });

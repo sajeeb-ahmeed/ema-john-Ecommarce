@@ -1,10 +1,16 @@
-.link {
+.link a,
+.link p {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 17px;
     margin-left: 36px;
+    cursor: pointer;
 }
 
-.link :hover {
+.link a:hover {
     color: orange !important;
+}
+
+.link p:hover {
+    color: brown;
 }
