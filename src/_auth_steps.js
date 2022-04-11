@@ -7,7 +7,8 @@
 6* attach from fied handeler and from submit handler
 7* npm -install -save react-firebase-hooks
 8* signInWithEmailAndPassword  use from react-firebase-hooks 
-
+9* if created user redirect to expeted page 
+10* 
 
 */
 
